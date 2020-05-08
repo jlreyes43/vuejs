@@ -1,0 +1,31 @@
+Conditionals
+
+1. v-if - can be added to any element or paragraph. Resolves to true or false in the end (connected to vue data).
+        - V-if detaches and attaches (completely removes them)
+        - can be extended with v-else or another v-if (there is no v-else-if, CHANGED in vue js 2.1. There is now v-else-if)
+        - also affects all nested elements
+
+2. template - doesnt get rendered in the DOM
+            - attach v-if to template (takes advantage of affecting nested element, a grouping of sorts)
+            - works like a div without the side effects
+
+3. v-show - works similarly but KEEPS the elements, just shows and hides them (unlike v-if that completely removes them)
+
+Lists
+
+1. v-for    - loop through an array and replicate an element as often as needed
+            - pull out content in the array and use it in the template
+
+            getting the index -> original synthax for v-for
+
+                    v-for="ingredient in ingredients"
+
+                    with index
+                    
+                    v-for="(ingredient, i) in ingredients"
+
+                    (element, index) <-always arranged like this
+
+2. template - to group the info so you can use the element and index in different HTML elements
+
+Looping is available for arrays single elements, arrays that hold objects, or objects themselves
