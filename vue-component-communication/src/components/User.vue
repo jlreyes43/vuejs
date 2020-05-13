@@ -7,6 +7,7 @@
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
+                <!-- resetFn connects User.vue method resetName to UserDetail which can then be exported -->
                 <app-user-detail 
                     :myName="name" 
                     @nameWasReset="name = $event" 
@@ -34,6 +35,7 @@
                 this.name = "Aimer"
             },
             resetName(){
+                // function referenced in UserDetail.vue as the callback function, called above with :resetFn
                 this.name = "JL"
             }
         },

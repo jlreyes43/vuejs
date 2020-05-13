@@ -16,6 +16,7 @@
                 type: String,
                 default: 'JL'
             },
+            //callback function method (child <-> parent communication)
             resetFn: Function
         },
         methods:{
@@ -23,6 +24,7 @@
                 return this.myName.split("").reverse().join("");
             },
             resetName(){
+                //emit function method to pass data from child to parent (child <-> parent communication)
                 this.myName = 'JL';
                 this.$emit('nameWasReset', this.myName);
             }
