@@ -4,6 +4,8 @@
         <p>Many Details</p>
         <p>Username: {{ switchName() }}</p>
         <button @click="resetName">Reset Name</button>
+        <button @click="resetFn">Reset Name</button>
+
     </div>
 </template>
 
@@ -13,7 +15,8 @@
             myName: {
                 type: String,
                 default: 'JL'
-            }
+            },
+            resetFn: Function
         },
         methods:{
             switchName(){
