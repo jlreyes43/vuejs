@@ -9,7 +9,10 @@
 <script>
     export default{
         props: {
-            myName: [String]
+            myName: {
+                type: String,
+                default: 'JL'
+            }
         },
         methods:{
             switchName(){
