@@ -3,6 +3,7 @@
         <h3>You may view the User Details here</h3>
         <p>Many Details</p>
         <p>Username: {{ switchName() }}</p>
+        <p>User Age: {{ userAge }}</p>
         <button @click="resetName">Reset Name</button>
         <button @click="resetFn">Reset Name</button>
 
@@ -17,7 +18,8 @@
                 default: 'JL'
             },
             //callback function method (child <-> parent communication)
-            resetFn: Function
+            resetFn: Function,
+            userAge: Number
         },
         methods:{
             switchName(){
