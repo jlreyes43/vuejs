@@ -1,13 +1,21 @@
 <template>
     <div class="container">
-        <app-header></app-header>
+        <jl-header></jl-header>
         <hr>
         <div class="row">
             <servers></servers>
-            <app-server-details></app-server-details>
+            <jl-server-details @serverWasReset="serverStatus = $event"></jl-server-details>
+            <!-- CHILD TO PARENT COMMUNICATION (Step 2. Cont. from ServerDetails.vue)
+            the first argument of the emit then becomes the event we want to listen to 
+            $event is the data we passed in the second argument. You can now pass it
+            as "data" and use inside the parent component.
+            
+            Though this will only work when the resetStatus() is clicked because
+            that is where I hooked the emit method in-->
         </div>
+        <p>The server is {{ serverStatus }}</p>
         <hr>
-        <app-footer></app-footer>
+        <jl-footer></jl-footer>
     </div>
 </template>
 
@@ -18,15 +26,16 @@
     import ServerDetails from './components/Server/ServerDetails.vue';
 
     export default {
+        data: function(){
+            return{
+                serverStatus: null
+            }
+        },
         components: {
-            appHeader: Header,
+            'jl-header': Header,
             Servers,
-            'app-server-details': ServerDetails,
-            'app-footer': Footer
+            'jl-server-details': ServerDetails,
+            'jl-footer': Footer
         }
     }
 </script>
-
-<style>
-
-</style>

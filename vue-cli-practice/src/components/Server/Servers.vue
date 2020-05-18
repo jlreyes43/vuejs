@@ -5,6 +5,14 @@
                 v-for="server in servers"
                 :server="server">
             </jl-server>
+            <!-- this part was kind of confusing at first. 
+            Take note that the v-for loop creates a variable implicitly 
+            that you can then pass like any normal data -->
+
+            <!-- PARENT TO CHILD COMMUNICATION PART 1 - Cont. in Server.vue
+            :server="server" 
+            to send data to the component containing this attribute, 
+            jl-server in this case -->
         </ul>
     </div>
 </template>
