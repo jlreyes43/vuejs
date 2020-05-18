@@ -26,9 +26,10 @@
             //PART 2 
             //Continued from main.js
             //Continued in ServerDetails.vue
-            //Define the method locally so that it can be used by, for example, click listenrers
+            //Define the method locally so that it can be used by, for example, click listeners
             //like above
-            //Upon click, the data is sent to the event bus
+            //Upon click, the data is sent to the event bus (as long as you set the data as the argument)
+            //in the event bus method that you defined
             //You can now listen for this event in the component that will receive the data
         },
     }

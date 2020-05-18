@@ -37,13 +37,11 @@
             });
         }
         //CHILD TO CHILD COMMUNICATION 
-        //PART 2 
+        //PART 3
         //Continued from Server.vue
         //put this listener in the created cycle so that it begins to listen 
         //to the event bus upon the start of the app
         //the first parameter is what it will be listening to, 
         //the second parameter is the data it will receive
-
-        
     }
 </script>

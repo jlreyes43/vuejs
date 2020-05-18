@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+export const serverBus = new Vue({
+  methods:{
+    serverSelected(server){
+      this.$emit('serverWasSelected', server)
+    }
+  }
+});
 
 //CHILD TO CHILD COMMUNICATION 
 //PART 1
@@ -10,13 +17,6 @@ import App from './App.vue'
 //Sidenote: this can also act as a place to put all global methods across the app.
 //Putting methods in the vue instance will allow all components to access the necessary
 //functions
-export const serverBus = new Vue({
-  methods:{
-    serverSelected(server){
-      this.$emit('serverWasSelected', server)
-    }
-  }
-});
 
 new Vue({
   el: '#app',
