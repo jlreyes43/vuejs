@@ -1,12 +1,12 @@
 <template>
     <div>
-        <p>A Wonderful Quote</p>
+        <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
 
