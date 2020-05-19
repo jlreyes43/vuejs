@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-               
+               <jl-quote></jl-quote>
             </div>
         </div>
     </div>
@@ -10,8 +10,12 @@
 
 <script>
 
+    import Quote from './components/Quote.vue'
+
     export default {
-        
+        components: {
+            jlQuote: Quote
+        }
     }
 </script>
 
