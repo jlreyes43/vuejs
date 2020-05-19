@@ -1,11 +1,19 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-               <jl-quote>
-                   <h2>{{quoteTitle}}</h2>
+            <div class="col-xl-12">
+                <button @click="selectedComponent= 'jlQuote'">Quote</button>
+                <button @click="selectedComponent= 'jlAuthor'">Author</button>
+                <button @click="selectedComponent= 'jlNew'">New</button>
+               <hr>
+               <p>{{ selectedComponent }}</p>
+               <!-- <jl-quote>
+                   <h2 slot="title">{{ quoteTitle }}</h2>
                    <p>A Wonderful Quote</p>
-               </jl-quote>
+               </jl-quote> -->
+               <component :is="selectedComponent">
+                   <p>Default Content</p>
+               </component>
             </div>
         </div>
     </div>
@@ -14,18 +22,21 @@
 <script>
 
     import Quote from './components/Quote.vue'
+    import Author from './components/Author.vue'
+    import New from './components/New.vue'
 
     export default {
         data: function(){
             return{
-                quoteTitle: 'The Quote'
+                quoteTitle: 'The Quote',
+                selectedComponent: 'jlQuote'
             }
         },
         components: {
-            jlQuote: Quote
+            jlQuote: Quote,
+            jlAuthor: Author,
+            jlNew: New
         }
     }
 </script>
 
-<style>
-</style>
