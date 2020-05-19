@@ -7,13 +7,15 @@
                 <button @click="selectedComponent= 'jlNew'">New</button>
                <hr>
                <p>{{ selectedComponent }}</p>
+               <keep-alive>
+                    <component :is="selectedComponent">
+                        <p>Default Content</p>
+                    </component>
+               </keep-alive>
                <!-- <jl-quote>
                    <h2 slot="title">{{ quoteTitle }}</h2>
                    <p>A Wonderful Quote</p>
                </jl-quote> -->
-               <component :is="selectedComponent">
-                   <p>Default Content</p>
-               </component>
             </div>
         </div>
     </div>
