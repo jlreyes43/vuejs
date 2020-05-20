@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <jl-quotes v-for="quote in quotes">{{ quote }}</jl-quotes>
+        <jl-quotes v-for="(quote, index) in quotes" @click.native="deleteQuote(index)">{{ quote }}</jl-quotes>
     </div>
 </template>
 
@@ -12,6 +12,11 @@
         props:['quotes'],
         components:{
             jlQuotes: Quotes
+        },
+        methods:{
+            deleteQuote(index){
+                this.$emit('quoteDeleted', index);
+            }
         }
     }
 </script>
