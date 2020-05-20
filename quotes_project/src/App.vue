@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <jl-header :quoteCount="quotes.length" :maxQuotes="maxQuotes"></jl-header>
         <jl-new-quotes 
             @quoteAdded="newQuote"
         ></jl-new-quotes>
@@ -19,6 +20,7 @@
 
     import QuotesGrid from './components/QuotesGrid.vue'
     import NewQuotes from './components/NewQuotes.vue'
+    import Header from './components/Header.vue'
 
     export default {
         data: function(){
@@ -31,10 +33,14 @@
         },
         components:{
             jlQuotesGrid: QuotesGrid,
-            jlNewQuotes: NewQuotes
+            jlNewQuotes: NewQuotes,
+            jlHeader: Header
         },
         methods:{
             newQuote(quote){
+                if(this.quotes.length >= this.maxQuotes){
+                    return alert('Please delete quotes first!');
+                }
                 this.quotes.push(quote);
             },
             deleteQuote(index){
