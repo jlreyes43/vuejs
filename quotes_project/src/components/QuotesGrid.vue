@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <jl-quotes v-for="quote in quotes">{{ quotes }}</jl-quotes>
+        <jl-quotes v-for="quote in quotes">{{ quote }}</jl-quotes>
     </div>
 </template>
 
@@ -9,9 +9,7 @@
     import Quotes from './Quotes.vue'
 
     export default {
-        props:[
-            'quotes'
-        ],
+        props:['quotes'],
         components:{
             jlQuotes: Quotes
         }
