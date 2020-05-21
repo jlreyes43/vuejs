@@ -1,6 +1,9 @@
 <template>
     <div class="row">
-        <jl-quotes v-for="(quote, index) in quotes" @click.native="deleteQuote(index)">{{ quote }}</jl-quotes>
+        <jl-quotes 
+            v-for="(quote, index) in quotes"
+            @click.native="deleteQuote(index)"
+        >{{ quote }}</jl-quotes>
     </div>
 </template>
 
