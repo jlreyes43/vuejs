@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
                     <label for="priority">Priority</label>
                     <select
                             id="priority"
@@ -95,6 +95,12 @@
                             v-for="priority in priorities" 
                         >{{priority}}</option>
                     </select>
+                </div>
+            </div>
+            <hr>    
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                    <jl-switch v-model="dataSwitch"></jl-switch>
                 </div>
             </div>
             <hr>
@@ -124,7 +130,7 @@
                         </ul>
                         <p>Gender: {{ userData.gender }}</p>
                         <p>Priority: {{ selectedPriority }}</p>
-                        <p>Switched:</p>
+                        <p>Switched: {{ dataSwitch }}</p>
                     </div>
                 </div>
             </div>
@@ -133,6 +139,9 @@
 </template>
 
 <script>
+    import Switch from './Switch.vue';
+
+
     export default {
         data(){
             return{
@@ -147,9 +156,13 @@
                 priorities: [
                     'Low', 'Medium', 'High'
                 ],
-                selectedPriority: 'Medium'
+                selectedPriority: 'Medium',
+                dataSwitch: true
 
             }
+        },
+        components: {
+            jlSwitch: Switch
         }
     }
 </script>
