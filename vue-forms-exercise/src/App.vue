@@ -14,7 +14,8 @@
                         <label for="Name">Name</label>
                         <input 
                             id="user.name"
-                            v-model="user.name"  
+                            @input="user.name = $event.target.value"
+                            :value="user.name"
                             type="text" 
                             class="form-control">
                     </div>
