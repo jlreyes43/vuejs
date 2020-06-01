@@ -10,16 +10,7 @@
                     <!-- Password -->
                     <!-- Store Data? Yes/No -->
                     <br>
-                    <div class="form-group">
-                        <label for="Name">Name</label>
-                        <input 
-                            id="user.name"
-                            @input="user.name = $event.target.value"
-                            :value="user.name"
-                            type="text" 
-                            class="form-control">
-                    </div>
-
+                    <jl-full-name></jl-full-name>
                     <div class="form-group">
                         <label for="mail">Mail</label>
                         <input 
@@ -72,7 +63,7 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Full Name: {{ user.name }}</p>
+                        <p>Full Name: {{ user.firstName + ' ' + user.lastName}}</p>
                         <p>Mail:  {{ user.mail }}</p>
                         <p>Password:  {{ user.password }} </p>
                         <p>Store in Database?:  {{ isStored }}</p>
@@ -84,11 +75,14 @@
 </template>
 
 <script>
+
+    import FullName from './FullName.vue'
+
     export default {
         data(){
             return{
                 user:{
-                    name: '',
+                    fullName: 'JL Reyes',
                     mail: '',
                     password: ''
                 },
@@ -100,6 +94,9 @@
             submitted(){
                 this.isSubmitted = true
             }
+        },
+        components:{
+            jlFullName: FullName
         }
     }
 </script>
