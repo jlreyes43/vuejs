@@ -11,16 +11,24 @@
                 </ul>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <jl-list></jl-list>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+
+    import List from './List.vue'
+    import { fruitMixin } from './fruitMixin'
+
     export default {
         data(){
             return{
                 text: 'Hello there!',
-                fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
-                filterText: ''
             }
         },
         filters:{
@@ -28,13 +36,10 @@
                 return value.toUpperCase();
             } 
         },
-        computed:{
-            filteredFruits(){
-                return this.fruits.filter((element) => {
-                    return element.match(this.filterText);
-                });
-            }
-        }
+        components:{
+            jlList: List
+        },
+        mixins: [fruitMixin]
     }
 </script>
 
