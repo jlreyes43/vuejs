@@ -29,7 +29,13 @@
         },
         methods: {
             submit(){
-                console.log(this.user);
+                //https://jls-vue-resource.firebaseio.com/
+                this.$http.post('https://jls-vue-resource.firebaseio.com/data.json', this.user)
+                    .then(response => {
+                        console.log(response)
+                    }, error => {
+                        console.log(error)
+                    });
             }
         }
     }
