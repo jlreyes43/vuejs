@@ -5,9 +5,9 @@
                 <h1>Routing</h1>
                 <hr>
                 <router-view name="header-top"></router-view>
-                <transition name="slide" mode="out-in">
+                <!-- <transition name="slide" mode="out-in"> -->
                     <router-view></router-view>
-                </transition>
+                <!-- </transition> -->
                 <router-view name="header-bottom"></router-view>
             </div>
         </div>
