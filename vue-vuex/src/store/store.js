@@ -22,5 +22,28 @@ export const store = new Vuex.Store({
         decrement: state => {
             state.counter--;
         }
+    },
+    // for commiting async, preferable even if not all mutations are not async just to be safe
+    actions:{
+        // context destructure, pulling only commit out
+        // increment: ({commit}) => {
+        //     commit('increment');
+        // }
+        increment: context => {
+            context.commit('increment');
+        },
+        decrement: ({commit}) => {
+            commit('decrement');
+        },
+        asyncIncrement: ({commit}) => {
+            setTimeout(() => {
+                commit('increment');
+            }, 1000);
+        },
+        asyncDecrement: ({commit}) => {
+            setTimeout(() => {
+                commit('decrement');
+            }, 1000);
+        }
     }
 });
