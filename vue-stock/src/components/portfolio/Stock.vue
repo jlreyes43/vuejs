@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-8 col-md-6">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">{{ stock. name }}
