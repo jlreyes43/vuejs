@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-8 col-md-6">
+    <div class="col-sm-10 col-md-8">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">{{ stock. name }}
@@ -17,7 +17,7 @@
                 <div class="float-right">
                     <button 
                         class="btn btn-success"
-                        @click="sellStock"
+                        @click="sellStock(stock.quantity)"
                         :disabled="quantity <= 0 || !Number.isInteger(+quantity)"
                         >Sell</button>
                 </div>
@@ -41,12 +41,15 @@
             ...mapActions({
                 placeSellOrder: 'sellStock'
             }),
-            sellStock(){
+            sellStock(stockQuantity){
                 const order = {
                     stockId: this.stock.id,
                     stockPrice: this.stock.price,
                     quantity: this.quantity
                 };
+                if(stockQuantity < order.quantity){
+                    return alert('You don\'t have enough stocks for that!');
+                }
                 this.placeSellOrder(order);
                 this.quantity = 0;
             }
