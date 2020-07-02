@@ -48,6 +48,7 @@
                     quantity: this.quantity
                 };
                 if(stockQuantity < order.quantity){
+                    this.quantity = 0;
                     return alert('You don\'t have enough stocks for that!');
                 }
                 this.placeSellOrder(order);

@@ -34,6 +34,11 @@
                 quantity: 0
             }
         },
+        computed: {
+            funds(){
+                return this.$store.getters.funds;
+            }
+        },
         methods: {
             buyStock(){
                 const order = {
@@ -41,6 +46,10 @@
                     stockPrice: this.stock.price,
                     quantity: this.quantity
                 };
+                if(order.stockPrice > this.funds){
+                    this.quantity = 0;
+                    return alert('You don\'t have enough funds for that!');
+                }
                 this.$store.dispatch('buyStock', order);
                 this.quantity = 0;
             }
