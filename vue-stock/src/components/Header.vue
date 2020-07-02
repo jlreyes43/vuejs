@@ -21,7 +21,7 @@
 						aria-haspopup="true" aria-expanded="false">Save & Load</a>
 					<div class="dropdown-menu" :class="{show: isDropdownOpen}" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#" @click="saveData">Save Data</a>
-						<a class="dropdown-item" href="#">Load Data</a>
+						<a class="dropdown-item" href="#" @click="loadData">Load Data</a>
 					</div>
 				</li>
 			</ul>
@@ -57,6 +57,9 @@ export default {
 				stocks:this.$store.getters.stocks
 			};
 			this.$http.put('data.json', data);
+		},
+		loadData(){
+			
 		}
 	}
 }
